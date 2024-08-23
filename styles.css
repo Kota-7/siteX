@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+    color: #f0f0f0;
+    background: #121212; /* Darker background for a sleek look */
+    margin: 0;
+    font-family: "Chakra Petch", sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    border-bottom: solid 2px #ff6f61; /* Coral color */
+    padding: 20px;
+    font-size: 36px; /* Larger font size for impact */
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Added shadow for a professional look */
+    background: linear-gradient(135deg, #ff6f61, #f8a5c2); /* Gradient background */
+    animation: slideIn 1s ease-out; /* Animation for header appearance */
+}
+
+/* Chamada Section */
+.chamada {
+    background: #4a90e2; /* Bright blue */
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    text-align: center;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    position: relative; /* For animation */
+    overflow: hidden; /* Hide overflow for animation */
+}
+
+.chamada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    z-index: 0;
+    animation: shine 2s infinite; /* Shine effect */
+}
+
+.chamada-texto {
+    position: relative;
+    z-index: 1; /* Ensure text is above the shine effect */
+}
+
+.chamada-texto h2 {
+    font-size: 48px; /* Larger font size */
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+    animation: fadeInUp 1s ease-out; /* Animation for text appearance */
+}
+
+.chamada-texto p {
+    font-size: 24px;
+    color: #ffffff;
+    animation: fadeInUp 1.5s ease-out; /* Slightly delayed animation */
+}
+
+/* Categoria Section */
+.categoria {
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.categoria h2 {
+    color: #ff6f61;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px; /* Spacing below the title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    animation: pulse 1.5s infinite; /* Pulse animation for the title */
+}
+
+/* Categoria Videos */
+.categoria-videos {
+    display: flex;
+    flex-wrap: nowrap; /* Keep items in a single row */
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.categoria-videos a {
+    display: block; /* Make links block elements for better spacing */
+    position: relative; /* For overlay effect */
+}
+
+.categoria-videos img {
+    opacity: 0.8;
+    height: 220px;
+    border-radius: 10px;
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    animation: bounceIn 1s ease-out; /* Bounce animation */
+}
+
+.categoria-videos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    border: 3px solid #ff6f61; /* Coral border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Keyframes */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
